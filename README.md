@@ -4,6 +4,10 @@ Direktori independen untuk membantu warga menemukan layanan publik Indonesia ber
 
 Satu Pintu memuat 771 layanan, portal informasi, aplikasi, layanan daerah, dan kampus. Bidang mencakup bantuan sosial, pendidikan, kesehatan, pekerjaan, identitas, pajak, hukum, usaha, transportasi, lingkungan, agama, dan layanan digital.
 
+## Demo
+
+Website: [1pintu.netlify.app](https://1pintu.netlify.app/)
+
 ## Fitur
 
 - Pencarian dengan padanan istilah.
