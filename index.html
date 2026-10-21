@@ -8,148 +8,20 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=25">
+  <link rel="stylesheet" href="assets/css/style.css?v=26">
 </head>
 <body>
-  <div class="intro-wipe" aria-hidden="true"><i></i></div>
-  <canvas id="cursor-tail" aria-hidden="true"></canvas>
-  <a class="skip" href="#hasil">Lewati ke hasil</a>
-  <header class="topbar">
-    <div class="zone-clocks" aria-label="Waktu Indonesia saat ini">
-      <span><small>WIB</small><b id="clock-wib">--.--</b></span>
-      <span><small>WITA</small><b id="clock-wita">--.--</b></span>
-      <span><small>WIT</small><b id="clock-wit">--.--</b></span>
-    </div>
-    <nav aria-label="Navigasi utama"><a href="#jelajah">Jelajah</a><a href="#tentang">Tentang data</a></nav>
-  </header>
-
+  <div id="app-loading" class="boot-loading"><strong>Memuat Satu Pintu…</strong></div>
+  <div data-include="partials/header.html"></div>
   <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="flag-stream" aria-hidden="true"><i></i><i></i><i></i></div>
-      <div class="motion-field" aria-hidden="true">
-        <div class="motion-disc">
-          <span class="compass-letter north">N</span><span class="compass-letter east">E</span>
-          <span class="compass-letter south">S</span><span class="compass-letter west">W</span>
-          <i class="compass-needle"></i>
-        </div>
-        <b class="motion-label ml-one">BANSOS</b>
-        <b class="motion-label ml-two">PENDIDIKAN</b>
-        <b class="motion-label ml-three">PAJAK</b>
-        <i class="motion-dot md-one"></i><i class="motion-dot md-two"></i>
-      </div>
-      <div class="hero-copy">
-        <p class="eyebrow">DIREKTORI LAYANAN INDONESIA</p>
-        <h1 id="hero-title">Cari layanan publik.<br><em>Tanpa tersesat.</em></h1>
-        <p class="intro">Temukan jalur resmi untuk bantuan sosial, pendidikan, kesehatan, pajak, dokumen, pekerjaan, hukum, dan kebutuhan warga lainnya.</p>
-        <div class="hero-stats" aria-label="Ringkasan data"><strong>771</strong> entri <i></i><strong>12</strong> bidang <i></i><strong>631</strong> bersumber</div>
-      </div>
-      <div class="hero-mark" aria-hidden="true"><span></span><span></span><span></span><b>↗</b></div>
-    </section>
-
-    <section class="quick" aria-labelledby="quick-title">
-      <h2 id="quick-title">Mau mengurus apa?</h2>
-      <div class="quick-grid">
-        <button data-quick="bansos"><span>01</span>Cek bantuan sosial</button>
-        <button data-quick="bpjs jkn"><span>02</span>Urus BPJS / JKN</button>
-        <button data-quick="beasiswa"><span>03</span>Cari beasiswa</button>
-        <button data-quick="pajak"><span>04</span>Bayar pajak</button>
-        <button data-quick="paspor"><span>05</span>Urus paspor</button>
-        <button data-quick="lowongan kerja"><span>06</span>Cari kerja</button>
-      </div>
-    </section>
-
-    <dialog class="welcome-dialog" id="welcome-dialog" aria-labelledby="welcome-title" tabindex="-1">
-      <button class="welcome-close" id="welcome-close" aria-label="Tutup pilihan awal">×</button>
-      <div class="welcome-head"><p class="eyebrow">MULAI DARI KEBUTUHANMU</p><h2 id="welcome-title">Mau mengurus apa?</h2><p>Pilih satu. Kami langsung tampilkan layanan yang paling sesuai.</p></div>
-      <div class="welcome-choices">
-        <button data-welcome-topic="bantuan"><small>01</small><b>Bantuan & kesehatan</b><span>Bansos, BPJS, JKN</span></button>
-        <button data-welcome-topic="pendidikan"><small>02</small><b>Sekolah & kuliah</b><span>Beasiswa, UTBK, KIP</span></button>
-        <button data-welcome-topic="kerja"><small>03</small><b>Kerja & pelatihan</b><span>Lowongan, CPNS, JMO</span></button>
-        <button data-welcome-topic="identitas"><small>04</small><b>Dokumen diri</b><span>KTP, KK, paspor</span></button>
-        <button data-welcome-topic="pajak"><small>05</small><b>Pajak & keuangan</b><span>NPWP, SPT, Coretax</span></button>
-        <button data-welcome-topic="transportasi"><small>06</small><b>Kendaraan & perjalanan</b><span>SIM, STNK, Samsat</span></button>
-        <button data-welcome-topic="usaha"><small>07</small><b>Usaha & perizinan</b><span>NIB, UMKM, merek</span></button>
-        <button data-welcome-topic="hukum"><small>08</small><b>Hukum & pengaduan</b><span>Peraturan, laporan, bantuan</span></button>
-      </div>
-      <button class="welcome-search" id="welcome-search">Belum tahu — cari sendiri</button>
-    </dialog>
-
-    <dialog class="game-dialog" id="game-dialog">
-      <div class="game-dialog-head"><div><p class="eyebrow">MINI GAME</p><h2>Lompat Karung: Lewati Masalah</h2></div><button id="game-close" aria-label="Tutup permainan">×</button></div>
-      <div class="game-shell">
-        <div class="game-hud"><span>SKOR <b id="game-score">0000</b></span><span>REKOR <b id="game-best">0000</b></span><span>KECEPATAN <b id="game-speed">1.0×</b></span><span>TARGET <b>2500</b></span></div>
-        <div id="game-stage" tabindex="0" role="application" aria-label="Permainan Lompat Karung. Tekan Spasi atau klik untuk melompat.">
-          <div class="game-overlay" id="game-overlay">
-            <p id="game-message">Siap melewati masalah?</p>
-            <div class="skin-picker" role="radiogroup" aria-label="Pilih karakter">
-              <button data-skin="0" role="radio" aria-checked="true"><span class="skin-preview skin-red"><i class="preview-head"></i><i class="preview-shirt"></i><i class="preview-sack"></i></span><b>Merdeka</b></button>
-              <button data-skin="1" role="radio" aria-checked="false"><span class="skin-preview skin-green"><i class="preview-head"></i><i class="preview-shirt"></i><i class="preview-sack"></i></span><b>Rimba</b></button>
-              <button data-skin="2" role="radio" aria-checked="false"><span class="skin-preview skin-blue"><i class="preview-head"></i><i class="preview-shirt"></i><i class="preview-sack"></i></span><b>Samudra</b></button>
-            </div>
-            <button id="game-start">Mulai main</button>
-          </div>
-        </div>
-      </div>
-      <div class="game-dialog-foot"><kbd>SPACE</kbd><span>atau klik arena untuk melompat</span></div>
-    </dialog>
-
-    <button class="game-fab" id="game-open" aria-haspopup="dialog" aria-controls="game-dialog"><span>MINI GAME</span><b>Lompat Karung ↗</b></button>
-
-    <section class="explore" id="jelajah">
-      <div class="search-wrap">
-        <div class="hero-dock">
-          <strong>Direktori Layanan Indonesia</strong>
-          <span>771 entri <i></i> 12 bidang <i></i> 631 bersumber</span>
-          <a href="#hero-title">Lihat pengantar ↑</a>
-        </div>
-        <label for="search">Cari layanan, instansi, atau kebutuhan</label>
-        <div class="search-line">
-          <div class="searchbox"><span aria-hidden="true">⌕</span><input id="search" type="search" autocomplete="off" placeholder="Contoh: KIP Kuliah, cek bansos, paspor…"><button id="clear-search" aria-label="Hapus pencarian" hidden>×</button></div>
-          <label class="topic-box"><span>Bidang</span><select id="topic-select" aria-label="Pilih bidang layanan"></select></label>
-        </div>
-        <div class="tabs" role="tablist" aria-label="Jenis hasil">
-          <button role="tab" data-view="all" aria-selected="true">Semua</button>
-          <button role="tab" data-view="saved" aria-selected="false">Tersimpan <span id="saved-count">0</span></button>
-        </div>
-      </div>
-
-      <div class="workspace">
-        <button class="filter-toggle" id="filter-toggle" aria-expanded="false" aria-controls="filters">Saring hasil <span id="filter-count">0</span></button>
-        <aside class="filters" id="filters" aria-label="Filter hasil">
-          <div class="filter-head"><button id="reset">Atur ulang</button></div>
-          <fieldset><legend>Tag kebutuhan</legend><label class="tag-search"><span class="sr-only">Cari tag</span><input id="tag-search" type="search" placeholder="Cari tag, mis. beasiswa"></label><div id="tags" class="tag-groups"></div></fieldset>
-          <fieldset><legend>Kondisi tautan</legend><select id="status"><option value="sourced">Tautan tersedia</option><option value="reachable">Bisa dibuka saat diperiksa</option><option value="review">Belum bisa dipastikan</option><option value="all">Tampilkan semuanya</option></select></fieldset>
-          <fieldset><legend>Cara masuk</legend><select id="access"><option value="all">Semua cara masuk</option><option value="publik">Bisa langsung dibuka</option><option value="akun-masyarakat">Perlu akun pribadi</option><option value="akun-pelaku-usaha">Perlu akun usaha</option><option value="petugas">Khusus petugas</option></select></fieldset>
-        </aside>
-
-        <section class="results" id="hasil" aria-labelledby="result-title">
-          <div class="result-head">
-            <div><p class="eyebrow">HASIL PENCARIAN</p><h2 id="result-title"><span id="result-count">0</span> layanan ditemukan</h2></div>
-            <div class="result-actions"><select id="sort" aria-label="Urutkan hasil"><option value="priority">Pilihan awal</option><option value="az">Nama A–Z</option><option value="institution">Instansi A–Z</option></select><button id="export">Unduh CSV</button></div>
-          </div>
-          <div id="active-filters" class="active-filters" aria-label="Filter aktif"></div>
-          <p id="live" class="sr-only" aria-live="polite"></p>
-          <div id="cards" class="cards"></div>
-          <div id="empty" class="empty" hidden><strong>Belum ada hasil.</strong><p>Coba kata lebih umum atau hapus sebagian filter.</p><button id="empty-reset">Hapus semua filter</button></div>
-          <nav id="pagination" class="pagination" aria-label="Halaman hasil" hidden></nav>
-        </section>
-      </div>
-    </section>
-
-    <section class="about" id="tentang">
-      <p class="eyebrow">TENTANG DATA</p>
-      <h2>Satu alamat awal.<br>Banyak urusan warga.</h2>
-      <p>Data menggabungkan layanan, portal informasi, aplikasi petugas, layanan daerah, dan kampus. Label sumber menjelaskan tingkat kurasi. Tautan tetap perlu dicek sebelum digunakan karena alamat layanan dapat berubah.</p>
-      <dl><div><dt>631</dt><dd>entri punya sumber</dd></div><div><dt>575</dt><dd>halaman merespons saat diperiksa</dd></div><div><dt>140</dt><dd>kandidat perlu verifikasi</dd></div></dl>
-      <small>Pemeriksaan data: 21 Oktober 2026</small>
-    </section>
+    <div data-include="partials/hero.html"></div>
+    <div data-include="partials/quick-links.html"></div>
+    <div data-include="partials/welcome-dialog.html"></div>
+    <div data-include="partials/game-dialog.html"></div>
+    <div data-include="partials/explorer.html"></div>
+    <div data-include="partials/about.html"></div>
   </main>
-
-  <footer><b>Satu Pintu</b><p>Direktori independen untuk membantu warga menemukan layanan publik Indonesia.</p><a href="#">Kembali ke atas ↑</a></footer>
-
-  <dialog id="detail"><button class="dialog-close" aria-label="Tutup">×</button><div id="detail-body"></div></dialog>
-  <div id="toast" role="status" aria-live="polite"></div>
-  <script src="catalog.js?v=2"></script>
-  <script src="app.js?v=19"></script>
+  <div data-include="partials/footer.html"></div>
+  <script src="assets/js/bootstrap.js?v=1"></script>
 </body>
 </html>

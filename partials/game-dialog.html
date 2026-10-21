@@ -1,0 +1,19 @@
+<dialog class="game-dialog" id="game-dialog">
+  <div class="game-dialog-head"><div><p class="eyebrow">MINI GAME</p><h2>Lompat Karung: Lewati Masalah</h2></div><button id="game-close" aria-label="Tutup permainan">×</button></div>
+  <div class="game-shell">
+    <div class="game-hud"><span>SKOR <b id="game-score">0000</b></span><span>REKOR <b id="game-best">0000</b></span><span>KECEPATAN <b id="game-speed">1.0×</b></span><span>TARGET <b>2500</b></span></div>
+    <div id="game-stage" tabindex="0" role="application" aria-label="Permainan Lompat Karung. Tekan Spasi atau klik untuk melompat.">
+      <div class="game-overlay" id="game-overlay">
+        <p id="game-message">Siap melewati masalah?</p>
+        <div class="skin-picker" role="radiogroup" aria-label="Pilih karakter">
+          <button data-skin="0" role="radio" aria-checked="true"><span class="skin-preview skin-red"><i class="preview-head"></i><i class="preview-shirt"></i><i class="preview-sack"></i></span><b>Merdeka</b></button>
+          <button data-skin="1" role="radio" aria-checked="false"><span class="skin-preview skin-green"><i class="preview-head"></i><i class="preview-shirt"></i><i class="preview-sack"></i></span><b>Rimba</b></button>
+          <button data-skin="2" role="radio" aria-checked="false"><span class="skin-preview skin-blue"><i class="preview-head"></i><i class="preview-shirt"></i><i class="preview-sack"></i></span><b>Samudra</b></button>
+        </div>
+        <button id="game-start">Mulai main</button>
+      </div>
+    </div>
+  </div>
+  <div class="game-dialog-foot"><kbd>SPACE</kbd><span>atau klik arena untuk melompat</span></div>
+</dialog>
+<button class="game-fab" id="game-open" aria-haspopup="dialog" aria-controls="game-dialog"><span>MINI GAME</span><b>Lompat Karung ↗</b></button>

@@ -1,0 +1,23 @@
+<section class="explore" id="jelajah">
+  <div class="search-wrap">
+    <div class="hero-dock">
+      <strong>Direktori Layanan Indonesia</strong>
+      <span>771 entri <i></i> 12 bidang <i></i> 631 bersumber</span>
+      <a href="#hero-title">Lihat pengantar ↑</a>
+    </div>
+    <label for="search">Cari layanan, instansi, atau kebutuhan</label>
+    <div class="search-line">
+      <div class="searchbox"><span aria-hidden="true">⌕</span><input id="search" type="search" autocomplete="off" placeholder="Contoh: KIP Kuliah, cek bansos, paspor…"><button id="clear-search" aria-label="Hapus pencarian" hidden>×</button></div>
+      <label class="topic-box"><span>Bidang</span><select id="topic-select" aria-label="Pilih bidang layanan"></select></label>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Jenis hasil">
+      <button role="tab" data-view="all" aria-selected="true">Semua</button>
+      <button role="tab" data-view="saved" aria-selected="false">Tersimpan <span id="saved-count">0</span></button>
+    </div>
+  </div>
+  <div class="workspace">
+    <button class="filter-toggle" id="filter-toggle" aria-expanded="false" aria-controls="filters">Saring hasil <span id="filter-count">0</span></button>
+    <div data-include="partials/sidebar.html"></div>
+    <div data-include="partials/results.html"></div>
+  </div>
+</section>

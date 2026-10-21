@@ -1,8 +1,8 @@
 # Satu Pintu
 
-Satu Pintu adalah direktori independen untuk membantu warga menemukan layanan publik Indonesia tanpa harus mengetahui nama portal atau instansi pengelolanya.
+Direktori independen untuk membantu warga menemukan layanan publik Indonesia berdasarkan kebutuhan, bukan nama portal atau instansi.
 
-Website memuat 771 layanan, portal informasi, aplikasi, layanan daerah, dan kampus. Data dikelompokkan berdasarkan kebutuhan seperti bantuan sosial, pendidikan, kesehatan, pekerjaan, identitas, pajak, hukum, usaha, transportasi, lingkungan, agama, dan layanan digital.
+Satu Pintu memuat 771 layanan, portal informasi, aplikasi, layanan daerah, dan kampus. Bidang mencakup bantuan sosial, pendidikan, kesehatan, pekerjaan, identitas, pajak, hukum, usaha, transportasi, lingkungan, agama, dan layanan digital.
 
 ## Fitur
 
@@ -12,19 +12,40 @@ Website memuat 771 layanan, portal informasi, aplikasi, layanan daerah, dan kamp
 - Simpan layanan di browser.
 - Salin tautan dan ekspor hasil menjadi CSV.
 - Popup kebutuhan awal maksimal sekali sehari.
-- Mini game Lompat Karung 3D yang dimuat saat dibuka.
+- Mini game Lompat Karung 3D dengan lazy loading Three.js.
 
-## File
+## Struktur
 
 ```text
-index.html   Halaman utama
-style.css   Tampilan dan animasi
-app.js      Pencarian, filter, detail, dan interaksi
-game.js     Mini game Three.js
-catalog.js  Data layanan untuk browser
+.
+├── index.html
+├── assets/
+│   ├── css/
+│   │   └── style.css
+│   └── js/
+│       ├── bootstrap.js
+│       ├── app.js
+│       └── game.js
+├── data/
+│   └── catalog.js
+└── partials/
+    ├── header.html
+    ├── hero.html
+    ├── quick-links.html
+    ├── welcome-dialog.html
+    ├── game-dialog.html
+    ├── explorer.html
+    ├── sidebar.html
+    ├── results.html
+    ├── about.html
+    └── footer.html
 ```
 
+`index.html` hanya menjadi shell. `assets/js/bootstrap.js` memuat seluruh partial HTML, lalu menjalankan katalog dan aplikasi. Partial dapat memiliki partial lain; `explorer.html` memuat `sidebar.html` dan `results.html`.
+
 ## Menjalankan lokal
+
+Partial HTML memakai `fetch`, jadi website harus dibuka lewat HTTP server.
 
 ```bash
 python3 -m http.server 8080
@@ -34,7 +55,7 @@ Buka `http://localhost:8080`.
 
 ## Publikasi
 
-Seluruh file website berada langsung di root repository. Hubungkan repository ke hosting statis atau unggah lima file utama tanpa proses build.
+Upload seluruh isi repository ke hosting statis. Tidak ada proses build dan tidak membutuhkan backend.
 
 ## Catatan data
 

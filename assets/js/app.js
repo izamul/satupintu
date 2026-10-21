@@ -212,7 +212,7 @@
   $('#filter-toggle').addEventListener('click',()=>{const open=$('#filters').classList.toggle('mobile-open');$('#filter-toggle').setAttribute('aria-expanded',String(open));});
   const loadScript=src=>new Promise((resolve,reject)=>{const script=document.createElement('script');script.src=src;script.onload=resolve;script.onerror=()=>reject(new Error(`Gagal memuat ${src}`));document.head.append(script);});
   let gameLoader;
-  const ensureGame=()=>gameLoader||(gameLoader=(window.THREE?Promise.resolve():loadScript('https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.min.js')).then(()=>loadScript('game.js?v=9')));
+  const ensureGame=()=>gameLoader||(gameLoader=(window.THREE?Promise.resolve():loadScript('https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.min.js')).then(()=>loadScript('assets/js/game.js?v=10')));
   $('#game-open').addEventListener('click',async()=>{
     const dialog=$('#game-dialog'),message=$('#game-message'),start=$('#game-start');
     if(!dialog.open)dialog.showModal();
