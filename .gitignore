@@ -1,0 +1,13 @@
+# Local notes and research artifacts
+/notes/
+/research-layanan/
+/satu-pintu/
+/thesis-research-university-comparison.md
+
+# Generated deployment artifacts
+outputs/__pycache__/
+outputs/satu-pintu-dist/
+outputs/direktori-layanan-indonesia/
+outputs/*.zip
+**/__pycache__/
+.DS_Store

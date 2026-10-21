@@ -1,0 +1,13 @@
+[build]
+  command = "python3 outputs/build_satu_pintu_dist.py"
+  publish = "outputs/satu-pintu-dist"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
