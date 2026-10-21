@@ -99,3 +99,7 @@ dialog{width:min(680px,calc(100% - 28px));max-height:88vh;border:0;padding:0;box
 @media(max-width:680px){.topbar nav{display:none}.zone-clocks{width:100%;justify-content:space-between}.zone-clocks span{padding:0 12px}.zone-clocks b{font-size:.72rem}}
 
 .boot-loading{min-height:100vh;display:grid;place-content:center;gap:8px;text-align:center;background:var(--paper);color:var(--ink)}.boot-loading strong{font-size:1rem}.boot-loading span{font-size:.75rem;color:var(--muted)}
+
+/* Keep floating controls clear of hosting badges */
+.game-fab{bottom:82px}#toast{bottom:150px}
+@media(max-width:680px){.game-fab{bottom:76px}#toast{bottom:132px}}
