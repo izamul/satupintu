@@ -4,10 +4,7 @@
 /satu-pintu/
 /thesis-research-university-comparison.md
 
-# Generated deployment artifacts
-outputs/__pycache__/
-outputs/satu-pintu-dist/
-outputs/direktori-layanan-indonesia/
-outputs/*.zip
+# Local build and data artifacts
+/outputs/
 **/__pycache__/
 .DS_Store
