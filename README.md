@@ -6,7 +6,7 @@ Satu Pintu memuat 771 layanan, portal informasi, aplikasi, layanan daerah, dan k
 
 ## Demo
 
-Website: [1pintu.netlify.app](https://1pintu.netlify.app/)
+Website: [satupintu.izamulfi.my.id]([https://satupintu.izamulfi.my.id/])
 
 ## Fitur
 
